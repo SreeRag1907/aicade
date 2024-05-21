@@ -1,0 +1,7 @@
+/* src/App.css */
+.bg-image {
+    background-image: url('/src/assets/img.png');
+    background-size: cover; /* Ensure the image covers the background */
+    background-position: center; /* Position the image at the center */
+    transform: translateY(-60%); 
+}

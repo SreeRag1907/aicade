@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import img from "./imgg.png";
 import EmailSignup from "../email/EmailSignup";
 
 const Card = () => {
@@ -10,7 +9,8 @@ const Card = () => {
     const scrollPosition = window.scrollY;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     const progress = scrollPosition / maxScroll;
-    setScrollProgress(progress);
+    const adjustedProgress = Math.min(progress, 0.6); // Stop animation at 60% of maxScroll
+    setScrollProgress(adjustedProgress);
   };
 
   // Add scroll event listener
@@ -20,28 +20,29 @@ const Card = () => {
   }, []);
 
   // Calculate opacity and scale based on scroll progress
-  const opacity = 0.3 + scrollProgress * 0.6;
-  const scale = 0.5 + scrollProgress * 0.5;
+  const opacity = 0.4 + scrollProgress * 0.8;
+  const scale = 0.5 + scrollProgress * 0.8;
 
   return (
     <div
-      className="rounded-xl mx-4 sm:mx-16 h-auto sm:h-[30rem] bg-gradient-to-tr from-sky-300 via-purple-500 to-pink-400 shadow-lg px-4 sm:px-6 py-8"
+      className="rounded-xl mx-4 sm:mx-16 sm:mt-5 h-auto sm:h-[37rem] bg-custom-bg shadow-lg px-4 sm:px-6 py-8"
       style={{
         opacity: opacity,
         transform: `perspective(1200px) scale(${scale})`,
+        fontFamily: "Roboto, sans-serif",
       }}
     >
       {/* Your card content goes here */}
-      <div className="py-4 sm:py-12 text-white font-semibold text-3xl sm:text-5xl flex items-center justify-center">
+      <div className="py-4 sm:py-12 text-white font-semibold text-3xl sm:text-7xl flex items-center justify-center" style={{ fontFamily: "Poppins, sans-serif" }}>
         <h1>aicade</h1>
       </div>
       <div className="text-white text-center">
-        <p className="text-xl sm:text-3xl font-bold">
+        <p className="text-xl sm:text-4xl font-bold" style={{ fontFamily: "Poppins, sans-serif" }}>
           Be the First to Revolutionize Game Creation!
         </p>
-        <p className="text-sm sm:text-lg mt-4 sm:mt-9">
+        <p className="text-sm sm:text-xl mt-4 sm:mt-9" style={{ fontFamily: "Roboto, sans-serif" }}>
           Join Our Exclusive Waitlist Now And Be Among The First To Experience A
-          World Where Creating Games Is As Fun And Easy As Playing Them!
+          World Where Creating<br/> Games Is As Fun And Easy As Playing Them!
         </p>
       </div>
       <EmailSignup />

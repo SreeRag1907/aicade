@@ -1,14 +1,21 @@
 import React from 'react';
-import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Hero from './components/Hero/Hero';
+import SignIn from './components/signIn/SignIn';
+import SignUp from './signUp/SignUp';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Hero/>
-      
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          {/* Define routes without the Navbar */}
+          <Route path="/" element={<Hero />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

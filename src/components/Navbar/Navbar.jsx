@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import img from "./imgg.png";
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+
 import { Menu, X, ArrowUpRight } from "react-feather";
 
 const Navbar = () => {
   const [scrollY, setScrollY] = useState(0);
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+  const scrollToCard = () => {
+    // Scroll to the element with id="card-section"
+    document.getElementById("card-section").scrollIntoView({ behavior: "smooth" });
+  };
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
@@ -66,15 +72,15 @@ const Navbar = () => {
                   opacity: "1",
                 }}
               >
-                <span className="group-hover:px-3 transition-all duration-300 ease-in-out">
+                <Link to="/signin" className="group-hover:px-3 transition-all duration-300 ease-in-out">
                   View Demo
-                </span>
+                </Link>
                 <span className="group-hover:scale-125 transition-transform duration-700 ease-in-out">
                   <ArrowUpRight />
                 </span>
               </a>
 
-              <a className="border-none h-10 items-center bg-gradient-to-br from-purple-600 to-indigo-800 rounded-full flex gap-x-3 shadow-none opacity-100 p-4 transition duration-300 cursor-pointer ease-in-out hover:brightness-125">
+              <a className="border-none h-10 items-center bg-gradient-to-br from-purple-600 to-indigo-800 rounded-full flex gap-x-3 shadow-none opacity-100 p-4 transition duration-300 cursor-pointer ease-in-out hover:brightness-125"  onClick={scrollToCard}>
                 Join Waitlist
                 <span>
                   <ArrowUpRight />
@@ -97,7 +103,7 @@ const Navbar = () => {
         >
           <div className="container px-4 mx-auto">
             <div className="flex flex-col space-y-4 items-center">
-              <a className="border-none h-10 items-center bg-gradient-to-br from-purple-600 to-indigo-800 rounded-full mb-5 flex gap-x-3 shadow-none opacity-100 p-4 transition duration-300 cursor-pointer ease-in-out hover:brightness-125">
+              <a className="border-none h-10 items-center bg-gradient-to-br from-purple-600 to-indigo-800 rounded-full mb-5 flex gap-x-3 shadow-none opacity-100 p-4 transition duration-300 cursor-pointer ease-in-out hover:brightness-125"  onClick={scrollToCard}>
                 Join Waitlist
                 <span>
                   <ArrowUpRight />
@@ -121,12 +127,13 @@ const Navbar = () => {
                   opacity: "1",
                 }}
               >
-                <span className="group-hover:px-3 transition-all duration-300 ease-in-out">
+                <Link to="/signin" className="group-hover:px-3 transition-all duration-300 ease-in-out">
                   View Demo
-                </span>
+                </Link>
                 <span className="group-hover:scale-125 transition-transform duration-700 ease-in-out">
                   <ArrowUpRight />
                 </span>
+
               </a>
             </div>
           </div>

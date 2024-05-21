@@ -16,7 +16,7 @@ const Footer = () => {
               </span>
             </span>
           </div>
-          <ul className="flex flex-wrap items-center justify-center mt-3 text-xl md:text-3xl mx-4 md:mx-8 gap-2 font-medium text-white">
+          <ul className="flex flex-wrap items-center justify-center mt-3 text-xl md:text-3xl mx-4 md:mx-24 gap-2 font-medium text-white">
             <li>
               <HiOutlineEnvelope />
             </li>
@@ -25,7 +25,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <hr className="my-4 border-gray-600 mx-8 md:mx-24" />
+        <hr className="my-4 border-gray-600 mx-8 md:mx-32" />
         <div className="text-center text-xs text-gray-500 pb-2">
           © 2024 Braincade Technologies Pvt. Ltd | All rights reserved
         </div>
