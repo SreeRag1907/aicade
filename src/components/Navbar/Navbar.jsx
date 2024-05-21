@@ -72,9 +72,9 @@ const Navbar = () => {
                   opacity: "1",
                 }}
               >
-                <Link to="/signin" className="group-hover:px-3 transition-all duration-300 ease-in-out">
+                <a href="https://play.aicade.in/login" className="group-hover:px-3 transition-all duration-300 ease-in-out">
                   View Demo
-                </Link>
+                </a>
                 <span className="group-hover:scale-125 transition-transform duration-700 ease-in-out">
                   <ArrowUpRight />
                 </span>

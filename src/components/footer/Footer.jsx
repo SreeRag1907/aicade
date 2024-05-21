@@ -18,10 +18,15 @@ const Footer = () => {
           </div>
           <ul className="flex flex-wrap items-center justify-center mt-3 text-xl md:text-3xl mx-4 md:mx-24 gap-2 font-medium text-white">
             <li>
-              <HiOutlineEnvelope />
+              <a href="mailto:pushkar@braincade.in">
+                <HiOutlineEnvelope />
+              </a>
             </li>
+
             <li>
-              <FaLinkedin />
+              <a href="https://www.linkedin.com/company/braincade/">
+                <FaLinkedin />
+              </a>
             </li>
           </ul>
         </div>
